@@ -12,6 +12,7 @@ public class CookieManager {
 		Cookie cookie = new Cookie(cName, cValue);
 		cookie.setPath("/");
 		cookie.setMaxAge(cTime);
+		//응답헤더에 추가하여 클라이언트에게 전송한다
 		response.addCookie(cookie);
 	}
 	

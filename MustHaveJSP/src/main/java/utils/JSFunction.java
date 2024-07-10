@@ -16,9 +16,9 @@ public class JSFunction {
 	public static void alertLocation(String msg, String url, JspWriter out)
 	{
 		/*
-			java클래스에서는 jsp의 내장객체를 사용할 수 없으므로 반드시
+			java 클래스에서는 jsp 의 내장객체를 사용할 수 없으므로 반드시
 			매개변수로 전달받아 사용해야 한다
-			여기서는 화면에 문자열을 출력하기 위해 out내장객체를
+			여기서는 화면에 문자열을 출력하기 위해 out 내장객체를
 			받은 후 사용하고 있다.
 		*/
 		try {
