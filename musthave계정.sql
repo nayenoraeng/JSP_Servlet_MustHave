@@ -95,3 +95,14 @@ desc member;
 
 select * from member;
 select id, pass, rownum from member;
+
+select * from board;
+select * from member;
+select id, pass, rownum from member;
+
+select * from board order by num DESC; --num에 입력된 것이 정확하지 않다 테이블 삭제함
+
+select * 
+ from ( select Tb.*, rownum rNum 
+     from (select * from board order by num DESC) Tb)
+ where rNum between 1 and 10;
