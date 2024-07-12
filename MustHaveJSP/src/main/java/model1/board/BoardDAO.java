@@ -261,7 +261,7 @@ public class BoardDAO extends JDBConnect  // 5장에서 생성한 JDBConnect 상
 				   + " LIKE '%" + map.get("searchWord") +"%' ";
 		}
 		//BETWEEN을 통해 게시물의 구간을 결정할 수 있다.
-		query += "		ORDER BT num DESC "
+		query += "		ORDER BY num DESC "
 			   + "		) Tb "
 			   + " ) "
 			   + " WHERE rNum BETWEEN ? AND ?";
@@ -286,7 +286,6 @@ public class BoardDAO extends JDBConnect  // 5장에서 생성한 JDBConnect 상
 				dto.setPostdate(rs.getDate("postdate"));
 				dto.setId(rs.getString("id"));
 				dto.setVisitcount(rs.getString("visitcount"));
-				dto.setName(rs.getString("name"));
 				
 				bbs.add(dto);
 			}
