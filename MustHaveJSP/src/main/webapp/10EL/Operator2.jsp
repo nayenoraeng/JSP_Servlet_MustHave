@@ -38,10 +38,10 @@
 			단, null과 정수를 연산하는 부분을 이클립스는 에러로 표시된다.
 			하지만 실행에는 문제가 없다.
 		 -->
-		<h3>null 연산</h3>
+<%-- 		<h3>null 연산</h3>
 		null + 10 : ${ null + 10 } <br/>
 		nullStr + 10 : ${ nullStr + 10 } <br/>
-		param.noVar > 10 : ${ param.noVar > 10 }
+		param.noVar > 10 : ${ param.noVar > 10 } --%>
 		
 	</body>
 </html>
