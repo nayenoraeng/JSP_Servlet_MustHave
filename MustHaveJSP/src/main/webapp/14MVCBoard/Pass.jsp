@@ -20,7 +20,7 @@
 	<h2>파일 첨부형 게시판 - 비밀번호 검증(Pass)</h2>
 	<!-- 
 		글쓰기 페이지 복사하여 해당페이지를 만들때 비밀번호 검증시에는
-		첨부파일이 필요없으므로 enctype은 제거해야한다 만약 제거하지 않으면
+		첨부파일이 필요없으므로 enctype 은 제거해야한다 만약 제거하지 않으면
 		request 내장객체로 폼값을 받을 수 없으므로 주의해야한다.
 	 -->
 	<form name="writeFrm" method="post" action="../mvcboard/pass.do"

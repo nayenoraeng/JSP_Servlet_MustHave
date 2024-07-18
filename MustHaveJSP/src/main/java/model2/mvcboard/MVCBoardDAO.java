@@ -126,6 +126,7 @@ public class MVCBoardDAO extends DBConnPool	// 커넥션 풀 상속
 			rs = psmt.executeQuery();
 			
 			if(rs.next()) {
+				//괄호안에 있는 숫자는 sql 인덱스 숫자에 맞춰서 해야함
 				dto.setIdx(rs.getString(1));
 	            dto.setName(rs.getString(2));
 	            dto.setTitle(rs.getString(3));
@@ -176,7 +177,7 @@ public class MVCBoardDAO extends DBConnPool	// 커넥션 풀 상속
 			psmt = con.prepareStatement(sql);
 			psmt.setString(1, idx);
 			psmt.executeUpdate();
-;		} 
+		} 
 		catch (Exception e)
 		{
 			
@@ -226,6 +227,36 @@ public class MVCBoardDAO extends DBConnPool	// 커넥션 풀 상속
 		catch (Exception e)
 		{
 			System.out.println("게시물 삭제 중 예외 발생");
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	public int updatePost(MVCBoardDTO dto)
+	{
+		int result = 0;
+		try
+		{
+			String query = "UPDATE mvcboard"
+						 + " SET title=?, name=?, content=?, ofile=?, sfile=? "
+						 + " WHERE idx=? and pass=?";
+			
+			psmt= con.prepareStatement(query);
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getName());
+			psmt.setString(3, dto.getContent());
+			psmt.setString(4, dto.getOfile());
+			psmt.setString(5, dto.getSfile());
+			psmt.setString(6, dto.getIdx());
+			psmt.setString(7, dto.getPass());
+			
+			//쿼리문 실행
+			result = psmt.executeUpdate();
+		} 
+		catch (Exception e)
+		{
+			System.out.println("게시물 수정 중 예외 발생");
 			e.printStackTrace();
 		}
 		
